@@ -33,6 +33,8 @@ delete_contents_in_folder('uploads/')
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
+        delete_contents_in_folder('static/')
+        delete_contents_in_folder('uploads/')
         if 'file' not in request.files:
             flash('No file part')
             return redirect(request.url)
@@ -61,4 +63,6 @@ def upload_file():
     return render_template('upload.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
