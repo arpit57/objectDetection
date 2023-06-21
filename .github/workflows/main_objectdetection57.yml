@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'objectDetection57'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E99064EDB3004D2CA2D5104BA5942514 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A592B9DA01E24CA4B95D455008CC66F1 }}
